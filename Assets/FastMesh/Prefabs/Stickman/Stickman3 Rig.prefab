@@ -471,6 +471,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3159590557607827353}
   - component: {fileID: 9023298354202365411}
+  - component: {fileID: 1731038547}
+  - component: {fileID: 1731038548}
+  - component: {fileID: 3971995819880099203}
   m_Layer: 0
   m_Name: Stickman3 Rig
   m_TagString: Untagged
@@ -487,7 +490,7 @@ Transform:
   m_GameObject: {fileID: 2347165352071580963}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.63, y: 0.77, z: 0.64}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6001028067686380078}
@@ -499,7 +502,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &9023298354202365411
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -507,7 +510,7 @@ Animator:
   m_GameObject: {fileID: 2347165352071580963}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 0d805b92594e532449c4704cc37df5f5, type: 3}
-  m_Controller: {fileID: 9100000, guid: 5fad70404ae8f7e4b9417f36c82e0a22, type: 2}
+  m_Controller: {fileID: 9100000, guid: fa13bd953091e14499db4c66cd4b8999, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -516,7 +519,50 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!54 &1731038547
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2347165352071580963}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!114 &1731038548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2347165352071580963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88c28ae03cb9d9498efc0be8bd7c296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+--- !u!65 &3971995819880099203
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2347165352071580963}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04163337, y: 0.33450046, z: 0.10845903}
+  m_Center: {x: -0.4791836, y: 0.11846917, z: -0.44577}
 --- !u!1 &2577817669503124793
 GameObject:
   m_ObjectHideFlags: 0

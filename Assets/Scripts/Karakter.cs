@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Karakter : MonoBehaviour
 {
-    public BolumDondurme b;
     public Coin parascript;
     Rigidbody rb;
     public float speed = 10f; 
@@ -33,11 +32,9 @@ public class Karakter : MonoBehaviour
     }
     void OnCollisionEnter(Collision carpisanObje)
     {
-        int bolumseviye = 2;
         if (carpisanObje.gameObject.CompareTag("dusman"))
         {
-            b.level = bolumseviye;
-            SceneManager.LoadScene(3, LoadSceneMode.Additive);
+            SceneManager.LoadScene(3, LoadSceneMode.Single);
         }
         if (carpisanObje.gameObject.CompareTag("coin"))
         {

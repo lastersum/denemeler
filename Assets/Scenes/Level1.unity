@@ -141,6 +141,9 @@ GameObject:
   - component: {fileID: 56000743}
   - component: {fileID: 56000744}
   - component: {fileID: 56000745}
+  - component: {fileID: 56000746}
+  - component: {fileID: 56000747}
+  - component: {fileID: 56000748}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -228,6 +231,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   geriSayimSuresi: 60
   geriSayimMetni: {fileID: 265934028}
+--- !u!114 &56000746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56000740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e33bb566ccf0304eacda89e6efd0ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  r: {fileID: 56000748}
+  level: 2
+--- !u!114 &56000747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56000740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bbd0fa40f6392c46b69bfc633113f23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showAdButton: {fileID: 0}
+--- !u!114 &56000748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56000740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc713276dd3b4614ea133844d1ac0b1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  showButton: {fileID: 0}
 --- !u!1 &265934026
 GameObject:
   m_ObjectHideFlags: 0

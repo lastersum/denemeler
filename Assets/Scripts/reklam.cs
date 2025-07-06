@@ -1,8 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using GoogleMobileAds;
 using GoogleMobileAds.Api;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class reklam : MonoBehaviour
 {
@@ -20,6 +22,7 @@ public class reklam : MonoBehaviour
 
     public void Start()
     {
+        
         MobileAds.Initialize((InitializationStatus initStatus) =>
         {
 
@@ -32,6 +35,7 @@ public class reklam : MonoBehaviour
         }
 
         loadInterstitiad();
+        ShowInterstitialAd();
     }
     public void loadInterstitiad()
     {
@@ -41,7 +45,7 @@ public class reklam : MonoBehaviour
             _interstitialAd = null;
         }
 
-        Debug.Log("reklam yükleniyor kardeþim");
+        UnityEngine.Debug.Log("reklam yükleniyor kardeþim");
 
         var adRequest = new AdRequest();
         string adUnitToLoad = _adunitId;
@@ -51,11 +55,11 @@ public class reklam : MonoBehaviour
         {
             if (error != null || ad == null)
             {
-                Debug.LogError("nanaeyi yedin");
+                UnityEngine.Debug.LogError("nanaeyi yedin");
                 return;
             }
 
-            Debug.Log("reklam yüklendi");
+            UnityEngine.Debug.Log("reklam yüklendi");
             _interstitialAd = ad;
         });
     }
@@ -64,28 +68,18 @@ public class reklam : MonoBehaviour
     {
         if (_interstitialAd != null && _interstitialAd.CanShowAd())
         {
-            Debug.Log("reklam gösteriliyoru");
+            UnityEngine.Debug.Log("reklam gösteriliyoru");
             _interstitialAd.Show();
         }
         else
         {
-            Debug.Log("reklam hazýr deðil");
+            UnityEngine.Debug.Log("reklam hazýr deðil");
         }
 
     }
 
     void OnShowAdButtonClicked()
     {
-        if (rek == 0)
-        {
-            Debug.Log("reklam gösteriliyor");
-            ShowInterstitialAd();
-            rek++;
-        }
-        if (rek == 1)
-        {
-
-        }
         
     }
 

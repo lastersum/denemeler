@@ -36,7 +36,7 @@ public class GeriSayim : MonoBehaviour
                 geriSayimSuresi = 0; // Negatif olmamasýný saðla
                 sayacCalisiyor = false;
                 GeriSayimGostergesiniGuncelle(geriSayimSuresi);
-                SceneManager.LoadScene(3, LoadSceneMode.Single);
+                SceneManager.LoadScene(4, LoadSceneMode.Single);
                 Debug.Log("Geri Sayým Bitti!");
                 // Geri sayým bittiðinde daha fazla eylem ekleyebilirsiniz,
                 // yeni bir sahne yüklemek, oyun bitti ekraný göstermek vb.

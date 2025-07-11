@@ -6,6 +6,7 @@ TagManager:
   tags:
   - dusman
   - coin
+  - karakter
   layers:
   - Default
   - TransparentFX

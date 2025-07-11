@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Karakter : MonoBehaviour
 {
+    public AudioSource voice;
+    public AudioClip yurume,toplama;
     public Coin parascript;
     Rigidbody rb;
     public float speed = 10f; 
@@ -12,7 +14,10 @@ public class Karakter : MonoBehaviour
     float horizontal;         
     void Start()
     {
+        voice = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
+        voice.clip = yurume;
+        voice.Play();
     }
 
     void Update()
@@ -20,6 +25,7 @@ public class Karakter : MonoBehaviour
         // Girdileri al
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
+        
     }
     void FixedUpdate()
     {
@@ -28,6 +34,8 @@ public class Karakter : MonoBehaviour
         Vector3 movement = new Vector3(horizontal, 0, vertical) * speed;
 
         rb.velocity = new Vector3(movement.x, currentYVelocity, movement.z);
+        
+
 
     }
     void OnCollisionEnter(Collision carpisanObje)
@@ -40,6 +48,36 @@ public class Karakter : MonoBehaviour
         {
             parascript.coin++;
             Destroy(carpisanObje.gameObject);
+            SesimiBirKezÇal();
+           
+        }
+    }
+    public void SesimiBirKezÇal()
+    {
+        if (voice != null && toplama != null)
+        {
+            voice.PlayOneShot(toplama);
+            // Veya atanan klibi açýkça oynatýp diðerlerini durdurmak isterseniz:
+            // sesKaynaðý.Play();
+        }
+        else
+        {
+            Debug.LogWarning("AudioSource veya AudioClip eksik!");
+        }
+    }
+    void Awake()
+    {
+        // Bu GameObject üzerindeki AudioSource bileþenini al
+        voice = GetComponent<AudioSource>();
+        if (voice == null)
+        {
+            // Eðer yoksa, yeni bir AudioSource ekle
+            voice = gameObject.AddComponent<AudioSource>();
+        }
+        // Eðer ses klibi Inspector'dan atanmýþsa ve AudioSource'un klibi atanmamýþsa ata
+        if (toplama != null && voice.clip == null)
+        {
+            voice.clip = toplama;
         }
     }
 }
